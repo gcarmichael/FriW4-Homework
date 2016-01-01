@@ -10,14 +10,14 @@ Category.delete_all
 Recipe.delete_all
 Ingredient.delete_all
 
-Category.create!(type: 'Starter')
-Category.create!(type: 'Fish')
-Category.create!(type: 'Main')
-Category.create!(type: 'Dessert')
+Category.create!(title: 'Starter')
+Category.create!(title: 'Fish')
+Category.create!(title: 'Main')
+Category.create!(title: 'Dessert')
 
 Recipe.create!(title: 'Tomato Soup', description: 'Hearty soup for winter', instructions: 'Make Tomato Soup')
 Recipe.create!(title: 'Steak', description: 'How to perfectly cook a steak', instructions: 'Instructions for cooking steak')
 
-Ingredient.create!(title: 'Cream', type: 'Dairy')
-Ingredient.create!(title: 'Tomato', type: 'Fruit')
-Ingredient.create!(title: 'Steak', type: 'Meat')
+Ingredient.create!(title: 'Cream', kind: 'Dairy')
+Ingredient.create!(title: 'Tomato', kind: 'Fruit')
+Ingredient.create!(title: 'Steak', kind: 'Meat')
