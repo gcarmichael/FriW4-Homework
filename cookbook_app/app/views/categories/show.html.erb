@@ -1,0 +1,10 @@
+<h1><%= @category.title %></h1>
+
+<%= @category.recipes.each do |recipe| %>
+
+  <%= link_to("#{@recipe.title}", recipe_path(recipe) %>
+  <br>
+  <%= image_tag(recipe.img, alt: 'No image') %>
+  <br>
+  <br>
+  <% end %>

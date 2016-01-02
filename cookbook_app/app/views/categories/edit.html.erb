@@ -1,0 +1,10 @@
+<h1>Edit Category Details</h1>
+
+<%= form_for @category do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true %>
+  <br>
+
+  <%= f.submit 'Edit Category' %>
+
+<% end %>

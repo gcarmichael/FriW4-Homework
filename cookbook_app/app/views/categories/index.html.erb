@@ -1,0 +1,16 @@
+<h1>
+  Categories
+</h1>
+<hr>
+
+<p>
+  <% @categories.each do |category| %>
+  <h3> <%= link_to("#{category.title}", category_path(category)) %> </h3>
+  <br>
+  <%= link_to("Edit Category", edit_category_path(category)) %>
+  <h4>
+    <%= link_to("Delete Category", category_path(category), method: :delete, data: {confirm: "Do you wish to delete this category?"}) %>
+  </h4>
+  <hr>
+</p>
+<% end %>
