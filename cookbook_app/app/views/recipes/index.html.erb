@@ -1,0 +1,20 @@
+<h1>
+  Recipes
+</h1>
+<hr>
+
+<p>
+  <% @recipes.each do |recipe| %>
+  <h3> <%= link_to("#{recipe.title}", recipe_path(recipe)) %> </h3>
+  <br>
+  <%= recipe.description %>
+  <br>
+  <%= image_tag(recipe.img, alt: 'No image') %>
+  <br>
+  <%= link_to("Edit Recipe", edit_recipe_path(recipe)) %>
+  <h4>
+    <%= link_to("Delete Recipe", recipe_path(recipe), method: :delete, data: {confirm: "Do you wish to delete this recipe?"}) %>
+  </h4>
+  <hr>
+</p>
+<% end %>

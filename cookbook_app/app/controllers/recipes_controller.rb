@@ -14,21 +14,22 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Receipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   def edit
-    @recipe = Receipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
+    @categories = Category.all
   end
 
   def update
-    recipe = Receipe.find(params[:id])
+    recipe = Recipe.find(params[:id])
     recipe.update(recipe_params)
     redirect_to(recipes_path)
   end
 
   def destroy
-    recipe = Receipe.find(params[:id])
+    recipe = Recipe.find(params[:id])
     recipe.destroy
     redirect_to(recipes_path)
   end
