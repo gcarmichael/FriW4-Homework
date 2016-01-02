@@ -1,0 +1,29 @@
+<h1>Add a Recipe</h1>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true %>
+  <br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+
+  <%= f.label :instructions %>
+  <%= f.text_field :instructions %>
+  <br>
+
+  <%= f.label :img %>
+  <%= f.text_field :img %>
+  <br>
+
+  <%= f.label 'Category' %>
+      <%= @categories.each do |category| %>
+      <%= f.radio_button (:category_id, "#{category.id}") %>
+      <%= f.label (":category_id_#{category.id}", "#{category.title}") %>
+      <%= end %>
+      <br>
+
+  <%= f.submit 'Add Recipe' %>
+
+<% end %>
