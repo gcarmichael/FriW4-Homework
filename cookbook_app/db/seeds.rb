@@ -15,8 +15,8 @@ Category.create!(title: 'Fish')
 Category.create!(title: 'Main')
 Category.create!(title: 'Dessert')
 
-Recipe.create!(title: 'Tomato Soup', description: 'Hearty soup for winter', instructions: 'Make Tomato Soup')
-Recipe.create!(title: 'Steak', description: 'How to perfectly cook a steak', instructions: 'Instructions for cooking steak')
+Recipe.create!(title: 'Tomato Soup', description: 'Hearty soup for winter', instructions: 'Make Tomato Soup', img: 'http://dingo.care2.com/pictures/greenliving/4/3519.large.jpg')
+Recipe.create!(title: 'Steak', description: 'How to perfectly cook a steak', instructions: 'Instructions for cooking steak', img: 'https://www.keevilandkeevil.co.uk/Content/Images/uploaded/steak.jpg')
 
 Ingredient.create!(title: 'Cream', kind: 'Dairy')
 Ingredient.create!(title: 'Tomato', kind: 'Fruit')
