@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>Paula Deen</h1>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to('See all recipes', recipes_path) %>
+        </li>
+        <li>
+          <%= link_to('Enter new recipe', new_recipe_path) %>
+        </li>
+        <li>
+          <%= link_to('See recipes by category', categories_path) %>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
