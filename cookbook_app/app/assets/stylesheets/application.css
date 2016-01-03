@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-size: 50%;
+  background-image: url(Paula.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color: white;
+  border-style: none;
+}
