@@ -1,24 +1,31 @@
 <h1>Edit Recipe Details</h1>
 
 <%= form_for @recipe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true %>
+<%= f.label :title %>
+<%= f.text_field :title, :autofocus => true %>
+<br>
+
+<%= f.label :description %>
+<%= f.text_area :description %>
+<br>
+
+<%= f.label :instructions %>
+<%= f.text_area :instructions %>
+<br>
+
+<%= f.label :img, 'Image URL' %>
+<%= f.text_field :img %>
+<br>
+
+<p>Please choose a category:
   <br>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <% @categories.each do |c| %>
+  <%= f.radio_button(:category_id, "#{c.id}") %>
+  <%= f.label(":category_id_#{c.id}", "#{c.title}") %>
   <br>
+  <% end %>
+</p>
 
-  <%= f.label :instructions %>
-  <%= f.text_field :instructions %>
-  <br>
-
-  <%= f.label :img %>
-  <%= f.text_field :img %>
-  <br>
-
-  <%= f.submit 'Edit Recipe' %>
-
-  <!-- Add Ingredients/Category data -->
+<%= f.submit 'Edit Recipe' %>
 
 <% end %>

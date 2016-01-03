@@ -10,8 +10,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    Recipe.create(recipe_params)
-    redirect_to(recipes_path)
+    Category.find(params[:recipe][:category_id]).recipes.create(recipe_params)
+    redirect_to(category_path(params[:recipe][:category_id]))
   end
 
   def show

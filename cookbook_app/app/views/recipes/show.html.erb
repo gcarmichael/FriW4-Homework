@@ -1,13 +1,13 @@
 <h1><%= @recipe.title %></h1>
+Category: <%= link_to("#{@recipe.category.title}", category_path(@recipe.category_id)) %>
+<br> 
 <%= image_tag(@recipe.img, alt:'No image', class: 'img') %>
 <br>
 <br>
 <p>
-  <%= @recipe.description %>
+  Description: <%= @recipe.description %>
   <br>
-  <br>
-  <%= @recipe.instructions %>
+ Instructions: <%= @recipe.instructions %>
+<br>
 
-  <!-- Add Ingredients/Category data -->
-  
 </p>
