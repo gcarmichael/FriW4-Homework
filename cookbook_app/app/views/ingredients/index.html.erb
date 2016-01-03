@@ -1,0 +1,18 @@
+<h1>
+  Ingredients
+</h1>
+<hr>
+
+<p>
+  <% @ingredients.each do |ingredient| %>
+  <h3> <%= link_to("#{ingredient.title}", ingredient_path(ingredient)) %> </h3>
+  <br>
+  <%= ingredient.kind %>
+  <br>
+  <%= link_to("Edit Ingredient", edit_ingredient_path(ingredient)) %>
+  <h4>
+    <%= link_to("Delete Ingredient", ingredient_path(ingredient), method: :delete, data: {confirm: "Do you wish to delete this ingredient?"}) %>
+  </h4>
+  <hr>
+</p>
+<% end %>
