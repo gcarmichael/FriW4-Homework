@@ -16,6 +16,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @quantities = Quantity.where(:recipe_id => params[:id])
   end
 
   def edit
@@ -37,7 +38,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :instructions, :img, :category_id)
+    params.require(:recipe).permit(:title, :description, :instructions, :img, :category_id, :quantities)
   end
 
 end
