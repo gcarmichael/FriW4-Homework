@@ -11,14 +11,16 @@ Category: <%= link_to("#{@recipe.category.title}", category_path(@recipe.categor
 <br>
 
 Ingredients:
-<% @quantities.each do |quantity| %>
-  <%= link_to(recipe_id: @recipe.id, ingredient_id: quantity.ingredient_id, return_page: 'recipe') %>
-  <%= link_to("#{Ingredient.find(quantity.ingredient_id).name}", ingredient_path(Ingredient.find(quantity.ingredient_id)) ) %>
+<% @quantities.each do |quantity| %> <br>
+<!--   <%= link_to(recipe_id: @recipe.id, ingredient_id: quantity.ingredient_id, return_page: 'recipe') %>
+  <br> -->
+  <%= link_to("#{Ingredient.find(quantity.ingredient_id).title}", ingredient_path(Ingredient.find(quantity.ingredient_id)) ) %>
 
   <%= form_for quantity do |f| %>
     <%= f.label :amount %>
     <%= f.text_field :amount %>
-    <%= f.submit "save", :class => 'submit_button' %>
+    <%= f.submit "Save" %>
+  <% end %>
   <% end %>
 
 </p>
